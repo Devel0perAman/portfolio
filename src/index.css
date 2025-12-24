@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  background-color: #000000;
+  min-height: 100%;
+}
+
+
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+.beam-line {
+  z-index: 8;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 20;
+}
+
+
+.hero-app {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* HERO BACKGROUND COLOR */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+ background-color: #010a10;
+}
+
+/* CANVAS */
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.button-bg {
+  background:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.048),
+      rgba(255, 255, 255, 0.05) 20%,
+      rgba(255, 255, 255, 0.02) 50%,
+      rgba(255, 255, 255, 0.05) 80%,
+      rgba(255, 255, 255, 0.18)
+    );
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.35),
+    0 14px 35px rgba(0, 0, 0, 0.45);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* HOVER STATE */
+.group:hover .button-bg {
+  background:
+    linear-gradient(
+      135deg,
+      #2595be3b,
+      #1c708e23
+    );
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.35),
+    0 18px 45px rgba(37, 149, 190, 0.185);
+}
+
+/* ===== About section light effect ===== */
+
+.tmponhover {
+  position: relative;
+}
+
+.tmponhover > * {
+  position: relative;
+  z-index: 2;
+}
+
+.tmponhover:hover .tmp-light,
+.tmponhover.active .tmp-light {
+  opacity: 1;
+}
+
+.tmp-light-1 {
+  position: absolute !important;
+  content: "";
+  width: 200px;
+  height: 200px;
+  background: #00bbff;
+  border-radius: 100%;
+  left: 50%;
+  transform: translateX(-100%);
+  filter: blur(70px);
+  opacity: 1;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.tmp-light-1.light-top-left-1 {
+  left: -100px;
+  top: -100px;
+  transform: inherit;
+}
+.tmp-light {
+  position: absolute !important;
+  content: "";
+  width: 200px;
+  height: 200px;
+  background: #00bbff;
+  border-radius: 100%;
+  left: 50%;
+  transform: translateX(-100%);
+  filter: blur(70px);
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.tmp-light.light-top-left {
+  left: -100px;
+  top: -100px;
+  transform: inherit;
+}
+
+/* Contact form inputs */
+.contact-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.contact-input:focus {
+  border-color: #13b4fd;
+  box-shadow: 0 0 0 1px rgba(19, 180, 253, 0.4);
+}
+.beam-line {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+/* Vertical guide line */
+.beam-line {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.048);
+  overflow: hidden;
+}
+
+/* Flowing blue light */
+.beam-flow {
+  position: absolute;
+  top: -30%;
+  left: -2px;
+  width: 5px;
+  height: 30%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #00aeff,
+    transparent
+  );
+  filter: blur(3px);
+  animation: beamMove 4s linear infinite;
+}
+
+.delay-0 { animation-delay: 0s; }
+.delay-1 { animation-delay: 1.5s; }
+.delay-2 { animation-delay: 3s; }
+
+@keyframes beamMove {
+  0% { top: -30%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+
+
+/* Independent timing */
+.beam-flow.delay-0 {
+  animation-delay: 0s;
+}
+
+.beam-flow.delay-1 {
+  animation-delay: 1.5s;
+}
+
+.beam-flow.delay-2 {
+  animation-delay: 3s;
+}
+
+/* Animation */
+@keyframes beamMove {
+  0% {
+    top: -30%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
