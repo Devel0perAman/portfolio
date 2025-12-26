@@ -62,7 +62,7 @@ const Contact = () => {
             rounded-3xl
             bg-gradient-to-br from-[#0b2230] via-[#07151e] to-[#040b10]
             border border-[#13b4fd]/30
-            p-10 md:p-14
+            p-4 md:p-14
           "
         >
           <div

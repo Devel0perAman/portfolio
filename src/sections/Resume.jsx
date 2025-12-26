@@ -28,7 +28,7 @@ const Resume = () => {
       onMouseLeave={handleMouseLeave}
       className="
         relative overflow-hidden
-        w-full h-[200px]
+        w-full h-[250px]
         bg-gradient-to-r from-[#050d13] via-[#07151e] to-[#050d13]
         border-y border-white/10
       "
@@ -47,7 +47,7 @@ const Resume = () => {
         "
       />
 
-      <div className="relative z-10 max-w-layout mx-auto px-6 h-full flex items-center">
+      <div className="relative z-10 max-w-layout mx-auto px-4 h-full flex items-center">
         <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="max-w-xl">
             <h2 className="text-4xl font-bold text-white">Resume</h2>
