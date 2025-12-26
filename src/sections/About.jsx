@@ -15,7 +15,7 @@ const About = () => {
                 border border-[#13b4fd]/30"
               >
                 <div className="tmp-light-1 light-top-left-1" />
-                <img src="/about.jpg" className="w-full h-[500px] object-cover"/>
+                <img src="/about.jpg" className="w-full h-[600px] object-cover"/>
               </div>
             </div>
           </div>
