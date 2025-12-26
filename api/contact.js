@@ -1,43 +1,47 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
-  }
-
   try {
-    const { name, email, phone, subject, message } = req.body;
+    if (req.method !== "POST") {
+      return res.status(405).json({ message: "Method not allowed" });
+    }
+
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error("RESEND_API_KEY is missing");
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    const body =
+      typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+
+    const { name, email, phone, subject, message } = body || {};
 
     if (!name || !email || !message) {
       return res.status(400).json({ message: "Missing required fields" });
     }
 
     await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
-      to: ["ak1804309@gmail.com"],
+      from: "Portfolio <onboarding@resend.dev>",
+      to: ["YOUR_EMAIL@gmail.com"], // ← REPLACE THIS
       reply_to: email,
-      subject: subject || "New Contact Form Message",
+      subject: subject || "New Contact Message",
       html: `
         <h2>New Contact Message</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
-        <p><strong>Message:</strong></p>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Phone:</b> ${phone || "N/A"}</p>
+        <p><b>Message:</b></p>
         <p>${message}</p>
       `,
     });
 
-    return res.status(200).json({
-      success: true,
-      message: "Email sent successfully",
-    });
+    return res.status(200).json({ success: true });
   } catch (error) {
-    console.error(error);
+    console.error("CONTACT API ERROR:", error);
     return res.status(500).json({
       success: false,
-      message: "Email sending failed",
+      error: error.message,
     });
   }
 }
