@@ -81,9 +81,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="mt-8">
-              <GlassButton>Read More About Me</GlassButton>
-            </div>
+           
           </div>
         </div>
       </div>
