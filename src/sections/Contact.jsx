@@ -1,6 +1,32 @@
 import GlassButton from "../components/GlassButton";
 
 const Contact = () => {
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    name,
+    email,
+    phone,
+    subject,
+    message,
+  };
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  });
+
+  const data = await res.json();
+
+  if (data.success) {
+    alert("Message sent successfully!");
+  } else {
+    alert("Failed to send message");
+  }
+};
+
   return (
     <section id="contact" className="py-section">
       <div className="max-w-layout mx-auto px-6">
@@ -85,7 +111,7 @@ const Contact = () => {
                 />
 
                 <div className="md:col-span-2 mt-4">
-                  <GlassButton>Appointment Now</GlassButton>
+                  <GlassButton>Submit</GlassButton>
                 </div>
               </form>
             </div>
