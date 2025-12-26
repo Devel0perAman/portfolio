@@ -9,7 +9,7 @@ const Hero = () => {
   const canvasRef = useRef(null);
   const appRef = useRef(null);
   const animatedWord = useTypewriter(
-    ["Ideate", "Craft", "Polish"],
+    ["Ideate", "Develop", "Polish"],
     90,
     1400
   );
