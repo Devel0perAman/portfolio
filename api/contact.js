@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     }
 
     if (!process.env.RESEND_API_KEY) {
-      throw new Error("RESEND_API_KEY is missing");
+      throw new Error("Missing RESEND_API_KEY");
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
@@ -15,15 +15,11 @@ export default async function handler(req, res) {
     const body =
       typeof req.body === "string" ? JSON.parse(req.body) : req.body;
 
-    const { name, email, phone, subject, message } = body || {};
-
-    if (!name || !email || !message) {
-      return res.status(400).json({ message: "Missing required fields" });
-    }
+    const { name, email, phone, subject, message } = body;
 
     await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
-      to: ["YOUR_EMAIL@gmail.com"], // ← REPLACE THIS
+      to: ["ak1804309@gmail.com"], 
       reply_to: email,
       subject: subject || "New Contact Message",
       html: `
@@ -31,17 +27,16 @@ export default async function handler(req, res) {
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Phone:</b> ${phone || "N/A"}</p>
-        <p><b>Message:</b></p>
-        <p>${message}</p>
+        <p><b>Message:</b> ${message}</p>
       `,
     });
 
     return res.status(200).json({ success: true });
-  } catch (error) {
-    console.error("CONTACT API ERROR:", error);
+  } catch (err) {
+    console.error("CONTACT ERROR:", err);
     return res.status(500).json({
       success: false,
-      error: error.message,
+      error: err.message,
     });
   }
 }
