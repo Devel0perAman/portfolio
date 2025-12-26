@@ -1,31 +1,52 @@
+import { useState } from "react";
 import GlassButton from "../components/GlassButton";
 
 const Contact = () => {
+const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
+
   const handleSubmit = async (e) => {
   e.preventDefault();
+  setStatus("loading");
 
-  const formData = {
-    name,
-    email,
-    phone,
-    subject,
-    message,
-  };
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        email,
+        phone,
+        subject,
+        message,
+      }),
+    });
 
-  const res = await fetch("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(formData),
-  });
+    const data = await res.json();
+    console.log("API RESPONSE:", data);
 
-  const data = await res.json();
-
-  if (data.success) {
-    alert("Message sent successfully!");
-  } else {
-    alert("Failed to send message");
+    if (data.success) {
+      setStatus("success");
+      setMessage("Message sent successfully!");
+      
+      // Optional: reset form
+      setName("");
+      setEmail("");
+      setPhone("");
+      setSubject("");
+      setMessage("");
+    } else {
+      setStatus("error");
+      setMessage(data.error || "Something went wrong");
+    }
+  } catch (err) {
+    console.error(err);
+    setStatus("error");
+    setMessage("Server error. Please try again later.");
   }
 };
+
+
 
   return (
     <section id="contact" className="py-section">
@@ -113,6 +134,18 @@ const Contact = () => {
                 <div className="md:col-span-2 mt-4">
                   <GlassButton>Submit</GlassButton>
                 </div>
+                {status === "loading" && (
+  <p className="mt-4 text-blue-400">Sending message...</p>
+)}
+
+{status === "success" && (
+  <p className="mt-4 text-green-400">{message}</p>
+)}
+
+{status === "error" && (
+  <p className="mt-4 text-red-400">{message}</p>
+)}
+
               </form>
             </div>
           </div>
