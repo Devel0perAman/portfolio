@@ -2,51 +2,58 @@ import { useState } from "react";
 import GlassButton from "../components/GlassButton";
 
 const Contact = () => {
-const [status, setStatus] = useState("idle");
+  // 🔹 FORM STATES
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
+  // 🔹 STATUS STATES
+  const [status, setStatus] = useState("idle");
+  const [feedback, setFeedback] = useState("");
+
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setStatus("loading");
+    e.preventDefault();
+    setStatus("loading");
+    setFeedback("");
 
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        phone,
-        subject,
-        message,
-      }),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          subject,
+          message,
+        }),
+      });
 
-    const data = await res.json();
-    console.log("API RESPONSE:", data);
+      const data = await res.json();
+      console.log("API RESPONSE:", data);
 
-    if (data.success) {
-      setStatus("success");
-      setMessage("Message sent successfully!");
-      
-      // Optional: reset form
-      setName("");
-      setEmail("");
-      setPhone("");
-      setSubject("");
-      setMessage("");
-    } else {
+      if (data.success) {
+        setStatus("success");
+        setFeedback("Message sent successfully!");
+
+        // Reset form
+        setName("");
+        setEmail("");
+        setPhone("");
+        setSubject("");
+        setMessage("");
+      } else {
+        setStatus("error");
+        setFeedback(data.error || "Something went wrong");
+      }
+    } catch (err) {
+      console.error(err);
       setStatus("error");
-      setMessage(data.error || "Something went wrong");
+      setFeedback("Server error. Please try again later.");
     }
-  } catch (err) {
-    console.error(err);
-    setStatus("error");
-    setMessage("Server error. Please try again later.");
-  }
-};
-
-
+  };
 
   return (
     <section id="contact" className="py-section">
@@ -72,6 +79,7 @@ const [status, setStatus] = useState("idle");
           />
 
           <div className="relative z-10 grid lg:grid-cols-2 gap-12">
+            {/* LEFT */}
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                 Get Ready To <br /> Create Great
@@ -95,57 +103,85 @@ const [status, setStatus] = useState("idle");
               </div>
             </div>
 
+            {/* RIGHT */}
             <div>
               <p className="text-primary uppercase text-xl font-bold tracking-widest mb-6">
                 Get in Touch
               </p>
 
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {/* 🔴 FIX: onSubmit added */}
+              <form
+                onSubmit={handleSubmit}
+                className="grid grid-cols-1 md:grid-cols-2 gap-5"
+              >
                 <input
                   type="text"
                   placeholder="Your Name"
                   className="contact-input"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
                 />
 
                 <input
                   type="text"
                   placeholder="Phone Number"
                   className="contact-input"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
 
                 <input
                   type="email"
                   placeholder="Your Email"
                   className="contact-input"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
 
                 <input
                   type="text"
                   placeholder="Subject"
                   className="contact-input"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
                 />
 
                 <textarea
                   placeholder="Your Message"
                   rows="4"
                   className="contact-input md:col-span-2 resize-none"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
                 />
 
                 <div className="md:col-span-2 mt-4">
-                  <GlassButton>Submit</GlassButton>
+                  {/* 🔴 FIX: submit type */}
+                  <GlassButton type="submit">
+                    {status === "loading" ? "Sending..." : "Submit"}
+                  </GlassButton>
                 </div>
+
+                {/* 🔹 FEEDBACK */}
                 {status === "loading" && (
-  <p className="mt-4 text-blue-400">Sending message...</p>
-)}
+                  <p className="md:col-span-2 text-blue-400">
+                    Sending message...
+                  </p>
+                )}
 
-{status === "success" && (
-  <p className="mt-4 text-green-400">{message}</p>
-)}
+                {status === "success" && (
+                  <p className="md:col-span-2 text-green-400">
+                    {feedback}
+                  </p>
+                )}
 
-{status === "error" && (
-  <p className="mt-4 text-red-400">{message}</p>
-)}
-
+                {status === "error" && (
+                  <p className="md:col-span-2 text-red-400">
+                    {feedback}
+                  </p>
+                )}
               </form>
             </div>
           </div>
@@ -153,6 +189,6 @@ const [status, setStatus] = useState("idle");
       </div>
     </section>
   );
-}
+};
 
 export default Contact;

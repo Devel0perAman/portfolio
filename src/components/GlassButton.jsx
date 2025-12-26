@@ -1,7 +1,6 @@
-export default function GlassButton({ children, onClick }) {
+const GlassButton = ({ children, type = "button", ...props }) => {
   return (
-    <button
-      onClick={onClick}
+    <button type={type} {...props}
       className="
         group relative inline-flex items-center gap-3
         px-8 py-3 rounded-full
@@ -28,3 +27,4 @@ export default function GlassButton({ children, onClick }) {
     </button>
   );
 }
+export default GlassButton;
