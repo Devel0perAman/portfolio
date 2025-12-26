@@ -2,14 +2,12 @@ import { useState } from "react";
 import GlassButton from "../components/GlassButton";
 
 const Contact = () => {
-  // 🔹 FORM STATES
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  // 🔹 STATUS STATES
   const [status, setStatus] = useState("idle");
   const [feedback, setFeedback] = useState("");
 
@@ -79,7 +77,6 @@ const Contact = () => {
           />
 
           <div className="relative z-10 grid lg:grid-cols-2 gap-12">
-            {/* LEFT */}
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                 Get Ready To <br /> Create Great
@@ -103,13 +100,11 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* RIGHT */}
             <div>
               <p className="text-primary uppercase text-xl font-bold tracking-widest mb-6">
                 Get in Touch
               </p>
 
-              {/* 🔴 FIX: onSubmit added */}
               <form
                 onSubmit={handleSubmit}
                 className="grid grid-cols-1 md:grid-cols-2 gap-5"
@@ -124,7 +119,7 @@ const Contact = () => {
                 />
 
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Phone Number"
                   className="contact-input"
                   value={phone}

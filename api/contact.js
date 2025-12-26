@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const { name, email, message } = req.body;
+    const { name, email,subject, phone, message } = req.body;
 
     await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
@@ -25,7 +25,8 @@ export default async function handler(req, res) {
       subject: "New Portfolio Contact",
       html: `
         <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
+        <p><b>Phone:</b> ${phone}</p>
+         <p><b>Subject:</b> ${subject}</p>
         <p><b>Message:</b></p>
         <p>${message}</p>
       `,
