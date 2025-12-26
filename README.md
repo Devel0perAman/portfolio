@@ -41,21 +41,3 @@ A modern, high-performance personal portfolio built to showcase my skills, proje
 
 ### Live Link
 - https://theamanportfolio.vercel.app/
-
----
-
-## 2. E-commerce Website Development
-
-**Type:** Commercial / Client Project  
-**Role:** Frontend & Backend Developer  
-
-### Description
-A fully functional eCommerce website designed for scalability and performance. The project includes a user-friendly interface, product management, secure checkout flow, and SEO-focused architecture.
-
-### Key Features
-- Product listing and filtering
-- Shopping cart functionality
-- Secure checkout process
-- Admin dashboard for product management
-- Responsive UI
-- SEO-optimized product pages
