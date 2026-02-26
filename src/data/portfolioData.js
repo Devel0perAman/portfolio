@@ -15,7 +15,7 @@ export const portfolioData = [
     category: ["Full Stack", "Ecommerce"],
     description:
       "Fashion Ware is a responsive eCommerce website for fashion products, built with modern frontend and backend technologies. It features product listing, category filtering, and a scalable architecture focused on performance, usability, and real-world eCommerce workflows.",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
+    tech: ["JavaScript", "ReactJs", "NodeJs", "Express", "MongoDB"],
     image: "/fashionWare.jpg",
     link: "https://fashion-ware-store.vercel.app/",
   },
@@ -58,5 +58,25 @@ export const portfolioData = [
     tech: ["Wordpress", "Elementor", "Booking"],
     image: "/i2u-cleaning.jpg",
     link: "https://i2u.com.au/",
+  },
+  {
+    id: 7,
+    title: "AI Writing Tools Website",
+    category: "Full Stack",
+    description:
+      "VersaBot AI Writing Tools is a modern AI-powered content generation platform designed to help users create high-quality, engaging content quickly. The platform provides 60+ AI templates and use cases for automated writing, enabling businesses to communicate effectively with customers using emotional and intelligent AI-generated copy.",
+    tech: ["JavaScript", "Reactjs", "NodeJs", "TailwindCSS", "REST API"],
+    image: "/ai-writing-tools.jpg",
+    link: "https://ai-tool-wine.vercel.app/",
+  },
+  {
+    id: 8,
+    title: "Website Development Project | Frontend / Full Stack Developer",
+    category: "Full Stack",
+    description:
+      "Worked on developing a professional corporate website for an IT company, focusing on performance, scalability, and modern UI/UX standards.",
+    tech: ["JavaScript", "Reactjs", "NodeJs", "TailwindCSS", "ExpressJs"],
+    image: "/developmenttask.jpg",
+    link: "https://developmenttask.com",
   },
 ];

@@ -10,10 +10,12 @@ const Portfolio = () => {
 
   const filtered =
   activeTab === "All"
-    ? portfolioData
-    : portfolioData.filter(project =>
-        project.category.includes(activeTab)
-      );
+    ?  [...portfolioData].reverse()
+    : [...portfolioData]
+        .reverse()
+        .filter(project =>
+          project.category.includes(activeTab)
+        );
 
 
   return (
