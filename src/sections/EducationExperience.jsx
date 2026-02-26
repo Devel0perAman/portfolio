@@ -96,9 +96,8 @@ const EducationExperience = () => {
             </div>
           </div>
           <img
-            src="https://img.freepik.com/free-photo/tropical-macaw-perched-vibrant-feathers-focus-generated-by-ai_188544-9720.jpg?t=st=1766567952~exp=1766571552~hmac=623bab5d6b1777a5d2ac1b157829b67605b08b9caab72f9fbeb50e7f000d8592&w=1060"
-            alt="Experience"
-            className="w-full h-full object-cover rounded"
+            src="/react.jpg"
+            className="w-full h-full object-contain rounded-xl"
           />
         </div>
 

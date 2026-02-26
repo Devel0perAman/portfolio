@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { scrollToSection } from "../utils/scrollTo";
+import { CiLinkedin } from "react-icons/ci";
 
 const navLinks = [
   { label: "Home", id: "home" },
@@ -51,7 +52,7 @@ const Header = () => {
           {/* SOCIAL */}
           <div className="flex items-center gap-3">
             <div className="hidden md:flex gap-2 text-white/80">
-              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10">in</span>
+              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10"><CiLinkedin /></span>
               <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10">X</span>
               <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10">f</span>
             </div>

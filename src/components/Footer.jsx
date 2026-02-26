@@ -39,7 +39,7 @@ const Footer = () => {
       <footer className="border-t border-white/10">
         <div className="max-w-layout mx-auto px-4 py-6 text-center">
           <p className="text-sm text-gray-400">
-            © 2025 . All Rights Reserved.
+            © {new Date().getFullYear()} . All Rights Reserved.
           </p>
         </div>
       </footer>
