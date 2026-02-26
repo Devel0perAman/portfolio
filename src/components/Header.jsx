@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { scrollToSection } from "../utils/scrollTo";
-import { CiLinkedin } from "react-icons/ci";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 const navLinks = [
   { label: "Home", id: "home" },
@@ -52,9 +52,8 @@ const Header = () => {
           {/* SOCIAL */}
           <div className="flex items-center gap-3">
             <div className="hidden md:flex gap-2 text-white/80">
-              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10"><CiLinkedin /></span>
-              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10">X</span>
-              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10">f</span>
+              <a href="https://www.linkedin.com/in/aman1804309"><span className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10"><FaLinkedinIn /></span></a>
+              <a href="https://github.com/Devel0perAman"><span className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10"><FaGithub /></span></a>
             </div>
 
             {/* MOBILE MENU */}
