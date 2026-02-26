@@ -78,7 +78,7 @@ const EducationExperience = () => {
               <ul className="mt-4 text-gray-300 text-[14px] list-disc ">
                 <li>Developed and maintained responsive, high-performance websites and web applications using React.js, JavaScript, HTML, CSS, and Tailwind CSS.</li>
                  <li>Improved site performance, SEO, and accessibility, ensuring fast load times and optimal user experience.</li>
-                  <li>Built and customized eCommerce solutions using WordPress and Shopify, focusing on scalability and clean architecture.</li>
+                  <li>Built and customized eCommerce solutions using CMS platform like WordPress, Shopify and wix, focusing on scalability and clean architecture.</li>
               </ul>
             </div>
 
