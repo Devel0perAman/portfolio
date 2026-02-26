@@ -58,7 +58,7 @@ const Resume = () => {
           </div>
 
           <div>
-            <GlassButton>Download Resume</GlassButton>
+            <a href="/AmanResume.pdf" target="_blank" rel="noopener noreferrer"><GlassButton>Download Resume</GlassButton></a>
           </div>
         </div>
       </div>
