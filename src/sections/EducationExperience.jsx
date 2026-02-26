@@ -97,7 +97,7 @@ const EducationExperience = () => {
           </div>
           <img
             src="/react.jpg"
-            className="w-full h-full object-contain object-right object-center rounded-xl"
+            className="w-full h-full object-cover object-right object-center rounded-xl"
           />
         </div>
 

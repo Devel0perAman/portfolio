@@ -85,13 +85,13 @@ const Contact = () => {
               <div className="mt-10 space-y-6 text-gray-300 text-sm">
                 <div>
                   <p className="font-semibold text-white">E-mail:</p>
-                  <p>ak1804309@gmail.com</p>
+                  <a href="mailto:ak1804309@gmail.com"><p>ak1804309@gmail.com</p></a>
                 </div>
 
 
                 <div>
                   <p className="font-semibold text-white">Contact:</p>
-                  <p>8988241867</p>
+                  <a href="tel:8988241867"><p>+91 89882 41867</p></a>
                 </div>
               </div>
             </div>
