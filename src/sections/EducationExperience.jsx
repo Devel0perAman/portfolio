@@ -76,7 +76,7 @@ const EducationExperience = () => {
               </h4>
               <p className="text-sm text-gray-400 mt-1">Technospike IT Sol. Pvt. Lmt.</p>
               <ul className="mt-4 text-gray-300 text-[14px] list-disc ">
-                <li>Developed and maintained responsive, high-performance websites and web applications using React.js, JavaScript, HTML, CSS, and Tailwind CSS.</li>
+                <li>Developed and maintained responsive, high-performance websites and web applications using React.js, Node.js, JavaScript, HTML, CSS, Bootstrap, Tailwind CSS, Git, and GitHub.</li>
                  <li>Improved site performance, SEO, and accessibility, ensuring fast load times and optimal user experience.</li>
                   <li>Built and customized eCommerce solutions using CMS platform like WordPress, Shopify and wix, focusing on scalability and clean architecture.</li>
               </ul>
@@ -85,12 +85,12 @@ const EducationExperience = () => {
             <div className="hover-box">
               <p className="text-primary text-md font-semibold">experience</p>
               <h4 className="text-white text-2xl font-semibold mt-1">
-                Full Stack Web Developer (6 Month)
+                Full Stack Web Developer (9 Month)
               </h4>
               <p className="text-sm text-gray-400 mt-1">Oxford Institute</p>
               <ul className="mt-4 text-gray-300 text-[14px] list-disc ">
-                <li>Assisted in developing frontend components and pages using React.js, HTML, CSS, and JavaScript.</li>
-                 <li>Worked with Git, APIs, and responsive design, gaining hands-on experience in real-world projects.</li>
+                <li>Assisted in developing frontend components and pages using React.js,Node.js HTML, CSS, Bootstrap, JavaScript Git, and GitHub.</li>
+                 <li>Worked with ExpressJs, MongoDb, Git, APIs, and responsive design, gaining hands-on experience in real-world projects.</li>
                   <li>Learned and applied clean coding practices, debugging, and performance optimization techniques.</li>
               </ul>
             </div>
