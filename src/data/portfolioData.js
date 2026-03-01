@@ -79,4 +79,14 @@ export const portfolioData = [
     image: "/developmenttask.jpg",
     link: "https://developmenttask.com",
   },
+  {
+    id: 9,
+    title: "Shopify E-commerce Website - Nexa ",
+    category: "Ecommerce",
+    description:
+      "The project involved customizing Shopify themes, optimizing product presentation, and implementing secure and seamless checkout functionality. Focused on delivering a mobile-responsive design, high-quality product display, and user-friendly navigation to enhance customer engagement and conversions.",
+    tech: ["Shopify Liquid", "HTML", "CSS", "JavaScript", "Shopify customization"],
+    image: "/nexa.jpg",
+    link: "https://nexafinejewelry.myshopify.com/",
+  },
 ];
