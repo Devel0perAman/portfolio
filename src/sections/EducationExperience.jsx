@@ -16,8 +16,7 @@ const EducationExperience = () => {
           </p>
         </div>
         <div className="max-w-layout mx-auto px-4">
-          <h2 className="text-2xl font-bold text-white mb-10">Education</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             <div
               className="
               rounded-2xl p-8
@@ -66,15 +65,15 @@ const EducationExperience = () => {
           {/* EXPERIENCE */}
           <div>
             <h3 className="text-2xl font-semibold text-white mb-6">
-              Experiences
+              Experience
             </h3>
 
             <div className="hover-box mb-6">
-              <p className="text-primary text-md font-semibold">experience</p>
               <h4 className="text-white text-2xl font-semibold mt-1">
                 Web Developer (2 Years)
               </h4>
-              <p className="text-sm text-gray-400 mt-1">Technospike IT Sol. Pvt. Lmt.</p>
+              <p className="text-md text-gray-400 mt-1">Technospike IT Sol. Pvt. Ltd.</p>
+              <p className="text-md text-gray-400 mt-1">Mar 2024 - Feb 2026</p>
               <ul className="mt-4 text-gray-300 text-[14px] list-disc ">
                 <li>Developed and maintained responsive, high-performance websites and web applications using React.js, Node.js, JavaScript, HTML, CSS, Bootstrap, Tailwind CSS, Git, and GitHub.</li>
                  <li>Improved site performance, SEO, and accessibility, ensuring fast load times and optimal user experience.</li>
@@ -83,11 +82,11 @@ const EducationExperience = () => {
             </div>
 
             <div className="hover-box">
-              <p className="text-primary text-md font-semibold">experience</p>
               <h4 className="text-white text-2xl font-semibold mt-1">
                 Full Stack Web Developer (9 Month)
               </h4>
-              <p className="text-sm text-gray-400 mt-1">Oxford Institute</p>
+              <p className="text-md text-gray-400 mt-1">Oxford Institute</p>
+              <p className="text-sm text-gray-400 mt-1">May 2023 - Feb 2026</p>
               <ul className="mt-4 text-gray-300 text-[14px] list-disc ">
                 <li>Assisted in developing frontend components and pages using React.js,Node.js HTML, CSS, Bootstrap, JavaScript Git, and GitHub.</li>
                  <li>Worked with ExpressJs, MongoDb, Git, APIs, and responsive design, gaining hands-on experience in real-world projects.</li>

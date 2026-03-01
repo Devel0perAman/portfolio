@@ -23,7 +23,7 @@ const Portfolio = () => {
       <div className="max-w-layout mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-primary uppercase text-sm tracking-widest">
-            Latest Portfolio
+            Latest Projects
           </p>
           <h2 className="mt-3 text-4xl font-bold text-white">
             Transforming Ideas into Exceptional
