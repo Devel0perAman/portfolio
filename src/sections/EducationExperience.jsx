@@ -73,7 +73,7 @@ const EducationExperience = () => {
                 Web Developer (2 Years)
               </h4>
               <p className="text-md text-gray-400 mt-1">Technospike IT Sol. Pvt. Ltd.</p>
-              <p className="text-md text-gray-400 mt-1">Mar 2024 - Feb 2026</p>
+              <p className="text-sm text-gray-400 mt-1">Mar 2024 - Feb 2026</p>
               <ul className="mt-4 text-gray-300 text-[14px] list-disc ">
                 <li>Developed and maintained responsive, high-performance websites and web applications using React.js, Node.js, JavaScript, HTML, CSS, Bootstrap, Tailwind CSS, Git, and GitHub.</li>
                  <li>Improved site performance, SEO, and accessibility, ensuring fast load times and optimal user experience.</li>
