@@ -71,7 +71,7 @@ export const portfolioData = [
   },
   {
     id: 8,
-    title: "Website Development Website - DevelopmentTask",
+    title: "Website for an IT Company - DevelopmentTask",
     category: "Full Stack",
     description:
       "Worked on developing a professional corporate website for an IT company, focusing on performance, scalability, and modern UI/UX standards.",
